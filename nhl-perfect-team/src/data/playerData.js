@@ -3,16 +3,16 @@ import axios from "axios";
 let bostonRoster = [];
 let torontoRoster = [];
 
-bostonCenters,
-bostonLeftWings, 
-bostonRightWings, 
-bostonDefensemen, 
-bostonGoalies, 
-torontoCenters, 
-torontoLeftWings, 
-torontoRightWings, 
-torontoDefensemen, 
-torontoGoalies
+let bostonCenters = [];
+let bostonLeftWings = [];
+let bostonRightWings = [];
+let bostonDefensemen = [];
+let bostonGoalies = [];
+let torontoCenters = [];
+let torontoLeftWings = [];
+let torontoRightWings = [];
+let torontoDefensemen = [];
+let torontoGoalies = [];
 
 
 let bostonOverall = [
