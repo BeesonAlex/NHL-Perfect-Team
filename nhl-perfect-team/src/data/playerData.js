@@ -159,7 +159,7 @@ axios
     // Add Overall Values from Overall's Array
     torontoRoster.forEach(player => {
       for (let i = 0; i < torontoOverall.length; i++) {
-        if (player.person.fullName == torontoOverall[i].name) {
+        if (player.person.fullName === torontoOverall[i].name) {
           player.overall = torontoOverall[i].overall;
         }
       }
