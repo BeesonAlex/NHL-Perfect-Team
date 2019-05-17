@@ -3,17 +3,17 @@ import axios from "axios";
 let bostonRoster = [];
 let torontoRoster = [];
 
-let bostonCenters = [];
-let bostonLeftWings = [];
-let bostonRightWings = [];
-let bostonDefensemen = [];
-let bostonGoalies = [];
+bostonCenters,
+bostonLeftWings, 
+bostonRightWings, 
+bostonDefensemen, 
+bostonGoalies, 
+torontoCenters, 
+torontoLeftWings, 
+torontoRightWings, 
+torontoDefensemen, 
+torontoGoalies
 
-let torontoCenters = [];
-let torontoLeftWings = [];
-let torontoRightWings = [];
-let torontoDefensemen = [];
-let torontoGoalies = [];
 
 let bostonOverall = [
   { name: "Patrice Bergeron", overall: 90 },
@@ -102,7 +102,7 @@ axios
     //Add Overall Values from Overall's Array
     bostonRoster.forEach(player => {
       for (let i = 1; i < bostonOverall.length; i++) {
-        if (player.person.fullName == bostonOverall[i].name) {
+        if (player.person.fullName === bostonOverall[i].name) {
           player.overall = bostonOverall[i].overall;
         }
       }
@@ -110,34 +110,46 @@ axios
 
     //Filter Boston's Roster into Players by Position
 
-    bostonCenters = bostonRoster.filter(player => {
+    let bostonCenters = bostonRoster.filter(player => {
       if (player.position.abbreviation === "C") {
         return player;
+      } else {
+        return null;
       }
+
     });
-    bostonLeftWings = bostonRoster.filter(player => {
+    let bostonLeftWings = bostonRoster.filter(player => {
       if (player.position.abbreviation === "LW") {
         return player;
+      } else {
+        return null;
       }
     });
 
-    bostonRightWings = bostonRoster.filter(player => {
+    let bostonRightWings = bostonRoster.filter(player => {
       if (player.position.abbreviation === "RW") {
         return player;
+      } else {
+        return null;
       }
     });
 
-    bostonDefensemen = bostonRoster.filter(player => {
+    let bostonDefensemen = bostonRoster.filter(player => {
       if (player.position.abbreviation === "D") {
         return player;
+      } else {
+        return null;
       }
     });
 
-    bostonGoalies = bostonRoster.filter(player => {
+    let bostonGoalies = bostonRoster.filter(player => {
       if (player.position.abbreviation === "G") {
         return player;
+      } else {
+        return null;
       }
     });
+
   })
   .catch(error => {
     console.log(error);
@@ -164,53 +176,50 @@ axios
         }
       }
     });
-    console.log(torontoRoster);
 
     //Filter Toronto's Roster into Players by Position
-    torontoCenters = torontoRoster.filter(player => {
+    let torontoCenters = torontoRoster.filter(player => {
       if (player.position.abbreviation === "C") {
         return player;
+      } else {
+        return null;
       }
     });
 
-    torontoLeftWings = torontoRoster.filter(player => {
+    let torontoLeftWings = torontoRoster.filter(player => {
       if (player.position.abbreviation === "LW") {
         return player;
+      } else {
+        return null;
       }
+
     });
 
-    torontoRightWings = torontoRoster.filter(player => {
+    let torontoRightWings = torontoRoster.filter(player => {
       if (player.position.abbreviation === "RW") {
         return player;
+      } else {
+        return null;
       }
     });
 
-    torontoDefensemen = torontoRoster.filter(player => {
+    let torontoDefensemen = torontoRoster.filter(player => {
       if (player.position.abbreviation === "D") {
         return player;
+      } else {
+        return null;
       }
     });
-    torontoGoalies = torontoRoster.filter(player => {
+    let torontoGoalies = torontoRoster.filter(player => {
       if (player.position.abbreviation === "G") {
         return player;
+      } else {
+        return null;
       }
     });
-
-    console.log(torontoLeftWings);
   })
   .catch(error => {
     console.log(error);
   });
 
-export {
-  bostonCenters,
-  bostonLeftWings,
-  bostonRightWings,
-  bostonDefensemen,
-  bostonGoalies,
-  torontoCenters,
-  torontoLeftWings,
-  torontoRightWings,
-  torontoDefensemen,
-  torontoGoalies
-};
+export { bostonCenters, bostonLeftWings, bostonRightWings, bostonDefensemen, bostonGoalies, torontoCenters, torontoLeftWings, torontoRightWings, torontoDefensemen, torontoGoalies };

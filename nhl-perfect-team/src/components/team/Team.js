@@ -4,13 +4,14 @@ import Lineup from './lineup/Lineup';
 
 export class Team extends Component {
   render() {
+    console.log(this.props)
     return (
       <div className="team-wrapper">
         <div className="team-logo-wrapper">
-        <img className = "team-logo__image" src={this.props.teamLogo} alt="team-logo" />
+        <img className = "team-logo__image" src={this.props.teamName.logo} alt="team-logo" />
         </div>
         
-        <Lineup />
+        <Lineup lineup={this.props}/>
         
         <div className="team-overall-wrapper">
         <h3 className="team-overall-label">Team Overall</h3>

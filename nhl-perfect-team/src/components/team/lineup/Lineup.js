@@ -7,15 +7,11 @@ export class Lineup extends Component {
   render() {
     return (
       <div className="team-lineup-wrapper">
-      <div className="team-lineup-forwards-wrapper">
-        <Forwards />
-      </div>
-      <div className="team-lineup-defense-wrapper">
-        <Defense />
-      </div>
-      <div className="team-lineup-goalie-wrapper">
-        <Goalie />
-      </div>
+        <Forwards lw={this.props.leftWings} c={this.props.centers} rw={this.props.rightWings} />
+      
+        <Defense d={this.props.defensemen} />
+
+        <Goalie g={this.props.goalies} />
       </div>
     )
   }
